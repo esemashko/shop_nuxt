@@ -2,19 +2,7 @@
 export default defineNuxtConfig({
     devtools: { enabled: true },
     css: ['~/assets/css/main.css'],
-    modules: ['@nuxtjs/apollo', '@nuxt/image',],
-    apollo: {
-        clients: {
-            default: {
-                httpEndpoint: 'https://promarine.ru/bitrix/services/rbx.graphql/',
-                httpLinkOptions: {
-                    headers: {
-                        'Origin': 'http://localhost:3000',
-                    }
-                },
-            }
-        },
-    },
+    modules: ['@nuxt/image'],
     app: {
         head: {
             title: 'Esemashko',
