@@ -1,27 +1,41 @@
 <template>
-  <NuxtLayout>
-    <TheHeader>Catalog</TheHeader>
-    <div class="bg-white">
-      <div class="pt-6">
-        <ProductList :elementList="elementList"/>
-      </div>
-    </div>
-  </NuxtLayout>
+    <NuxtLayout>
+        <div class="bg-white">
+            <CategoryList :sectionList="sectionList"/>
+        </div>
+    </NuxtLayout>
 </template>
 
 <script setup>
 definePageMeta({
-  layout: 'default'
+    layout: 'default'
 })
 
-const {data: products} = await useFetch('https://fakestoreapi.com/products/');
-
-const elementList = ref([]);
-
-watchEffect(() =>
-{
-  if (products.value) {
-    elementList.value = toRaw(products.value);
+const query = gql`
+query Categories {
+  categories {
+    data {
+      id
+      name
+      slug
+      sort,
+      media {
+        url
+      }
+    }
   }
-});
+}
+`
+
+const { data: response } = await useAsyncQuery(query)
+
+const sectionList = ref([])
+
+watchEffect(() => {
+    const categoriesData = response?.value?.categories?.data
+    if (categoriesData) {
+        sectionList.value = categoriesData
+    }
+})
+
 </script>

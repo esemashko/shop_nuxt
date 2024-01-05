@@ -1,14 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    devtools: { enabled: true },
+    devtools: {enabled: true},
     css: ['~/assets/css/main.css'],
-    modules: ['@nuxt/image'],
+    modules: ['@nuxt/image', '@nuxtjs/apollo', '@vite-pwa/nuxt'],
     app: {
         head: {
             title: 'Esemashko',
             meta: [
-                { charset: 'utf-8' },
-                { name: 'viewport', content: 'width=device-width,initial-scale=1' }
+                {charset: 'utf-8'},
+                {name: 'viewport', content: 'width=device-width,initial-scale=1'}
             ]
         }
     },
@@ -18,5 +18,12 @@ export default defineNuxtConfig({
             autoprefixer: {},
         },
     },
-
+    apollo: {
+        clients: {
+            default: {
+                httpEndpoint: 'https://admin.esemashko.com/graphql'
+                //httpEndpoint: 'http://localhost/graphql'
+            }
+        },
+    }
 })
