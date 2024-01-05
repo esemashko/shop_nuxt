@@ -2,9 +2,7 @@
   <div>
       <NuxtPwaManifest />
       <NuxtLoadingIndicator/>
-      <NuxtLayout>
-          <NuxtPage />
-      </NuxtLayout>
+      <NuxtPage />
   </div>
 </template>
 <script setup lang="ts">
