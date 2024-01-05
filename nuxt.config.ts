@@ -82,7 +82,7 @@ export default defineNuxtConfig({
         },
         devOptions: {
             enabled: true,
-            suppressWarnings: true,
+            suppressWarnings: false,
             navigateFallbackAllowlist: [/^\/$/],
             type: 'module',
         },
