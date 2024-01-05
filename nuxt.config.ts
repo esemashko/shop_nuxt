@@ -26,4 +26,26 @@ export default defineNuxtConfig({
             }
         },
     },
+    pwa: {
+        workbox: {
+            globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,svg}'],
+            runtimeCaching: [
+                {
+                    urlPattern: '/*',
+                    handler: 'NetworkFirst',
+                    method: 'GET',
+                    options: {
+                        cacheName: 'shop-cache-v1',
+                        expiration: {
+                            maxEntries: 500,
+                            maxAgeSeconds: 86400,
+                        },
+                        cacheableResponse: {
+                            statuses: [0, 200],
+                        },
+                    },
+                },
+            ],
+        },
+    }
 })
