@@ -1,6 +1,11 @@
 <template>
     <NuxtLayout>
         <div class="bg-white">
+            <div class="container mx-auto px-4">
+                <div class="py-8">
+                    <h1 class="text-2xl font-bold">Main</h1>
+                </div>
+            </div>
             <CategoryList :sectionList="sectionList"/>
         </div>
     </NuxtLayout>
