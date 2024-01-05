@@ -1,4 +1,4 @@
-# NuxtJS 3 Demo Project for fakestoreapi.com
+# NuxtJS 3 Demo Project
 
 ## Live Demo
 
@@ -6,7 +6,7 @@ Check out the live demo here: [Demo Link](https://shop.esemashko.com/)
 
 ## Project Description
 
-This project is a demonstration application developed using the NuxtJS framework. The main goal of the project is to demonstrate working with an external API, in this case, with [fakestoreapi.com](https://fakestoreapi.com). Fake Store API is a free online REST API that you can use to get data about products, categories, users, and much more.
+This project is a demonstration application developed using the NuxtJS framework. The main goal of the project is to demonstrate working with an external API, in this case, with [graphql.org](https://graphql.org/).
 
 ## Features
 
@@ -20,7 +20,7 @@ To get started with this project, follow these steps:
 
 1. **Clone the Repository**
 ```sh
-git clone https://github.com/esemashko/nuxt_fakestoreapi.git
+git clone https://github.com/esemashko/nuxt_shop.git
 ```
 
 2. **Install Dependencies**
