@@ -18,7 +18,7 @@ definePageMeta({
 
 const query = gql`
 query Categories {
-  categories {
+  categories(orderBy: {column: SORT, order: ASC}) {
     data {
       id
       name
