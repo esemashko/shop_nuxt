@@ -7,8 +7,6 @@
             <ul v-if="errorMessages.length">
                 <li v-for="(message, index) in errorMessages" :key="index">{{ message }}</li>
             </ul>
-            <p>Auth token: {{ cookie?.value }}</p>
-            <p>Auth token 2: {{ token }}</p>
         </div>
     </NuxtLayout>
 </template>
@@ -18,9 +16,8 @@
 const email = ref('info@esemashko.com')
 const password = ref('password')
 const errorMessages = ref([])
-const token = ref('')
 
-const cookie = useCookie('auth-token')
+const authToken = useCookie('auth-token')
 
 const mutation = gql`
   mutation Login($input: LoginInput!) {
@@ -61,9 +58,6 @@ const login = async () => {
             })
         }
     }
-
-    const { getToken } = useApollo()
-    token.value = getToken()
 }
 
 </script>
