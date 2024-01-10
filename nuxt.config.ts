@@ -2,7 +2,11 @@
 export default defineNuxtConfig({
     devtools: {enabled: true},
     css: ['~/assets/css/main.css'],
-    modules: ['@nuxt/image', '@nuxtjs/apollo', '@vite-pwa/nuxt'],
+    modules: [
+        '@nuxt/image',
+        '@nuxtjs/apollo',
+        '@vite-pwa/nuxt'
+    ],
     future: {
         typescriptBundlerResolution: true,
     },
@@ -39,10 +43,25 @@ export default defineNuxtConfig({
         },
     },
     apollo: {
+        autoImports: true,
+        authType: 'Bearer',
+        authHeader: 'Authorization',
+        tokenStorage: 'cookie',
+        proxyCookies: true,
         clients: {
             default: {
-                httpEndpoint: 'https://admin.esemashko.com/graphql'
-                //httpEndpoint: 'http://localhost/graphql'
+                httpEndpoint: 'https://admin.esemashko.com/graphql',
+                //httpEndpoint: 'http://localhost/graphql',
+                wsEndpoint: '',
+                httpLinkOptions: {},
+                wsLinkOptions: {},
+                websocketsOnly: false,
+                connectToDevTools: false,
+                defaultOptions: {},
+                inMemoryCacheOptions: {},
+                tokenStorage: 'cookie',
+                authType: 'Bearer',
+                authHeader: 'Authorization'
             }
         },
     },
