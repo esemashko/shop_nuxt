@@ -51,6 +51,7 @@ export default defineNuxtConfig({
         clients: {
             default: {
                 httpEndpoint: 'https://admin.esemashko.com/graphql',
+                browserHttpEndpoint: 'https://shop.esemashko.com',
                 //httpEndpoint: 'http://localhost/graphql',
                 wsEndpoint: '',
                 httpLinkOptions: {},
