@@ -37,6 +37,7 @@ const { data: response } = await useAsyncQuery(query, { elementCode: elementCode
 
 const dataElement = ref([])
 const breadcrumbs = ref([])
+
 watchEffect(() => {
     const data = response?.value?.product
     if (data) {

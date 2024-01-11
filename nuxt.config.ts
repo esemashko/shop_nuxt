@@ -5,7 +5,9 @@ export default defineNuxtConfig({
     modules: [
         '@nuxt/image',
         '@nuxtjs/apollo',
-        '@vite-pwa/nuxt'
+        '@vite-pwa/nuxt',
+        '@pinia/nuxt',
+        '@nuxtjs/seo'
     ],
     future: {
         typescriptBundlerResolution: true,
@@ -105,5 +107,11 @@ export default defineNuxtConfig({
             navigateFallbackAllowlist: [/^\/$/],
             type: 'module',
         },
-    }
+    },
+    pinia: {
+        storesDirs: ['./store/**']
+    },
+    site: {
+        url: 'https://shop.esemashko.com'
+    },
 })
